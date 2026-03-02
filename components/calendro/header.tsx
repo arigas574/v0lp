@@ -59,7 +59,9 @@ export function Header() {
             </a>
           </div>
           <a
-            href="#"
+            href="https://calendro.com.br/login"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden cursor-pointer items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm font-medium text-foreground transition-all hover:border-muted-foreground hover:bg-secondary md:inline-flex"
           >
             Login
@@ -101,7 +103,9 @@ export function Header() {
                 Nos contate
               </a>
               <a
-                href="#"
+                href="https://calendro.com.br/login"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex w-fit items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm font-medium text-foreground"
               >
                 Login
