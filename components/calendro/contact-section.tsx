@@ -173,10 +173,10 @@ export function ContactSection() {
               Contato
             </p>
             <h2 className="font-[family-name:var(--font-heading)] text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-              Vamos conversar sobre o seu negocio
+              Vamos conversar sobre o seu negócio
             </h2>
             <p className="mt-3 text-muted-foreground text-pretty">
-              Preencha o formulario e nossa equipe entrara em contato em ate 24 horas.
+              Preencha o formulário e nossa equipe entrará em contato em até 24 horas.
             </p>
 
             {formState === "success" ? (
@@ -299,7 +299,7 @@ export function ContactSection() {
                     value={form.mensagem}
                     onChange={(e) => setForm({ ...form, mensagem: e.target.value })}
                     className="w-full resize-none rounded-lg border border-border bg-card px-4 py-2.5 text-sm text-foreground placeholder:text-zinc-600 focus:border-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-500"
-                    placeholder="Descreva seu projeto ou duvida..."
+                    placeholder="Descreva seu projeto ou dúvida..."
                   />
                 </div>
                 <button
@@ -330,9 +330,9 @@ export function ContactSection() {
                       <MapPin className="size-4 text-muted-foreground" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-foreground">Localizacao</p>
+                      <p className="text-sm font-medium text-foreground">Localização</p>
                       <p className="mt-0.5 text-sm text-muted-foreground">
-                        Av. Rio Branco, 657 Ed. Puntel, 4 Andar
+                        Av. Rio Branco, 657 Ed. Puntel, 4° Andar
                       </p>
                       <p className="text-sm text-muted-foreground">
                         Centro, Santa Rosa - RS, Brasil
@@ -363,7 +363,7 @@ export function ContactSection() {
               </div>
             </div>
 
-            {/* Social e Desenvolvedora - Centralizados */}
+            {/* Social e Desenvolvedora */}
             <div className="mt-8 flex flex-col items-center">
               <p className="mb-3 text-sm text-muted-foreground">Redes Sociais</p>
               <div className="flex items-center gap-2">

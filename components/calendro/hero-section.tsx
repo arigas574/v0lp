@@ -166,7 +166,7 @@ const niches = [
     desc: "Clientes agendam pelo celular, você gerencia a equipe e acompanha tempo real. Sem papel, sem WhatsApp, sem confusão.",
     features: [
       "Link exclusivo para seus clientes agendarem",
-      "Controle de fila e tempo medio de atendimento",
+      "Controle de fila e tempo médio de atendimento",
       "Lembretes aos clientes por notificação",
     ],
     slides: nicheSlides.barbearia,
@@ -176,7 +176,7 @@ const niches = [
     label: "Clinicas",
     icon: Stethoscope,
     headline: "Consultas organizadas, pacientes satisfeitos.",
-    desc: "Gerencie agendas de multiplos profissionais, lembretes automaticos e tenha controle total sobre os atendimentos do seu consultório.",
+    desc: "Gerencie agendas de múltiplos profissionais, lembretes automaticos e tenha controle total sobre os atendimentos do seu consultório.",
     features: [
       "Agendas independentes por profissional",
       "Produtos potenciais",
