@@ -15,16 +15,16 @@ export function Header() {
 
   return (
     <header className="w-full bg-background border-b border-border">
-      <div className="relative mx-auto flex h-24 max-w-[1440px] items-center justify-between px-6 md:px-8">
-        
-        <div className="relative z-10 flex shrink-0 items-center">
-          <a href="#" className="flex items-center">
+      <div className="relative mx-auto flex h-20 max-w-[1440px] items-center justify-between px-6 md:px-8">
+
+        <div className="relative z-10 flex shrink-0 items-center pt-2 pb-2">
+          <a href="#" className="flex items-center cursor-default">
             <Image
               src="/images/logo.png"
               alt="Calendro"
               width={400}
               height={400}
-              style={{ height: '85px', width: 'auto' }}
+              style={{ height: '135px', width: 'auto' }}
               className="object-contain transition-transform hover:scale-105"
               priority
             />
