@@ -4,17 +4,13 @@ import { useState } from "react"
 import Image from "next/image"
 import { Menu, X, ArrowRight } from "lucide-react"
 
-interface HeaderProps {
-  onOpenDemo: () => void
-}
-
 const navLinks = [
   { label: "Sobre", href: "#sobre" },
   { label: "Planos", href: "#planos" },
   { label: "Contato", href: "#contato" },
 ]
 
-export function Header({ onOpenDemo }: HeaderProps) {
+export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (

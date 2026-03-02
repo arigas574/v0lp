@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, Fragment } from "react"
+import { useState } from "react"
 import { motion } from "motion/react"
 import { Check, X, ArrowRight, ChevronDown } from "lucide-react"
 
@@ -184,7 +184,6 @@ export function PricingSection() {
   return (
     <section id="planos" className="bg-card py-20 lg:py-28" aria-label="Planos e Precos">
       <div className="mx-auto max-w-6xl px-6">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -204,7 +203,6 @@ export function PricingSection() {
             </p>
           </div>
 
-          {/* Billing Toggle */}
           <div className="flex items-center gap-3">
             <span className={`text-sm ${!annual ? "text-foreground" : "text-muted-foreground"}`}>
               Mensal
@@ -231,7 +229,6 @@ export function PricingSection() {
           </div>
         </motion.div>
 
-        {/* Plan Cards */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -288,7 +285,6 @@ export function PricingSection() {
                 <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
               </button>
 
-              {/* Accordion com benefícios agrupados */}
               <PlanAccordion planKey={plan.key} planName={plan.name} />
             </motion.div>
           ))}

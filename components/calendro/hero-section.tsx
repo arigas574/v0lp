@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { motion } from "motion/react"
 import {
@@ -14,10 +14,6 @@ import {
   Check,
   Scissors,
   Stethoscope,
-  Wrench,
-  Sparkles,
-  Award,
-  CircleCheck,
   MapPin,
 } from "lucide-react"
 
@@ -156,10 +152,6 @@ function InfiniteCarousel({ slides, autoPlayInterval = 2500 }: CarouselProps) {
   )
 }
 
-interface HeroSectionProps {
-  onOpenDemo: () => void
-}
-
 const nichos = [
   {
     id: "barbearia",
@@ -222,37 +214,15 @@ const capabilities = [
   },
 ]
 
-const stats = [
-  { value: "8.250+", label: "Negocios ativos" },
-  { value: "1.2M+", label: "Agendamentos/mes" },
-  { value: "99.9%", label: "Uptime garantido" },
-  { value: "4.8/5", label: "Avaliacao media" },
-]
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, delay: i * 0.08, ease: [0.25, 0.46, 0.45, 0.94] },
-  }),
-}
-
-const stagger = {
-  visible: { transition: { staggerChildren: 0.06 } },
-}
-
-export function HeroSection({ onOpenDemo }: HeroSectionProps) {
+export function HeroSection() {
   const [activeNicho, setActiveNicho] = useState(0)
   const nicho = nichos[activeNicho]
   const NichoIcon = nicho.icon
 
   return (
     <section id="sobre" className="relative overflow-hidden bg-background" aria-label="Sobre o Calendro">
-      {/* ── Hero Top ── */}
       <div className="relative pb-32 pt-8 lg:pb-40 lg:pt-12">
         <div className="relative mx-auto max-w-6xl px-6">
-          {/* Headline */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -268,7 +238,6 @@ export function HeroSection({ onOpenDemo }: HeroSectionProps) {
             </p>
           </motion.div>
 
-          {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -284,7 +253,6 @@ export function HeroSection({ onOpenDemo }: HeroSectionProps) {
             </a>
           </motion.div>
 
-          {/* Image Placeholder */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -318,14 +286,12 @@ export function HeroSection({ onOpenDemo }: HeroSectionProps) {
             </p>
           </motion.div>
 
-          {/* ── Nicho Tabs ── */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
             className="mt-20"
           >
-            {/* Tab Toggle */}
             <div className="mx-auto flex items-center justify-center rounded-full border border-border bg-card p-1 w-fit">
               <button
                 onClick={() => setActiveNicho(0)}
@@ -351,7 +317,6 @@ export function HeroSection({ onOpenDemo }: HeroSectionProps) {
               </button>
             </div>
 
-            {/* Tab Content */}
             <motion.div
               key={nicho.id}
               initial={{ opacity: 0, y: 12 }}
@@ -359,7 +324,6 @@ export function HeroSection({ onOpenDemo }: HeroSectionProps) {
               transition={{ duration: 0.35 }}
               className="mt-10 grid items-stretch gap-8 lg:grid-cols-5"
             >
-              {/* Left: text + features */}
               <div className="lg:col-span-2">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="flex size-10 items-center justify-center rounded-lg bg-secondary">
@@ -391,7 +355,6 @@ export function HeroSection({ onOpenDemo }: HeroSectionProps) {
                 </ul>
               </div>
 
-              {/* Right: interactive preview com Carrossel */}
               <div className="lg:col-span-3">
                 <InfiniteCarousel slides={nicho.slides} autoPlayInterval={4000} />
               </div>
@@ -400,7 +363,6 @@ export function HeroSection({ onOpenDemo }: HeroSectionProps) {
         </div>
       </div>
 
-      {/* ── Funcionalidades ── */}
       <div className="bg-background py-12 lg:py-16">
         <div className="mx-auto max-w-6xl px-6">
           <motion.div
