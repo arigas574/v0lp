@@ -77,6 +77,11 @@ function InfiniteCarousel({ slides, autoPlayInterval = 2500 }: CarouselProps) {
     setCurrentIndex(index)
   }
 
+  // Reset to first slide when slides change
+  useEffect(() => {
+    setCurrentIndex(0)
+  }, [slides])
+
   useEffect(() => {
     if (!isPaused) {
       const interval = setInterval(() => {
