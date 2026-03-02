@@ -318,7 +318,6 @@ export function HeroSection() {
             </div>
 
             <motion.div
-              key={niche.id}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35 }}
