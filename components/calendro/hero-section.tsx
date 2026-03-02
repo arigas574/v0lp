@@ -65,9 +65,8 @@ interface CarouselProps {
   autoPlayInterval?: number
 }
 
-function InfiniteCarousel({ slides, autoPlayInterval = 2500 }: CarouselProps) {
+function InfiniteCarousel({ slides, autoPlayInterval = 1500 }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [isPaused, setIsPaused] = useState(false)
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % slides.length)
@@ -83,22 +82,16 @@ function InfiniteCarousel({ slides, autoPlayInterval = 2500 }: CarouselProps) {
   }, [slides])
 
   useEffect(() => {
-    if (!isPaused) {
-      const interval = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % slides.length)
-      }, autoPlayInterval)
-      return () => clearInterval(interval)
-    }
-  }, [autoPlayInterval, isPaused, slides.length])
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % slides.length)
+    }, autoPlayInterval)
+    return () => clearInterval(interval)
+  }, [autoPlayInterval, slides.length])
 
   const currentSlide = slides[currentIndex]
 
   return (
-    <div
-      className="relative w-full"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
+    <div className="relative w-full">
       <div className="rounded-2xl border border-border bg-card p-0.5">
         <div className="rounded-xl bg-secondary/60 p-3 lg:p-4">
           <div className="mb-5 flex items-center justify-end">
