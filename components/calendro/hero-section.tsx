@@ -80,11 +80,11 @@ function InfiniteCarousel({ slides, autoPlayInterval = 2500 }: CarouselProps) {
   useEffect(() => {
     if (!isPaused) {
       const interval = setInterval(() => {
-        nextSlide()
+        setCurrentIndex((prev) => (prev + 1) % slides.length)
       }, autoPlayInterval)
       return () => clearInterval(interval)
     }
-  }, [autoPlayInterval, isPaused])
+  }, [autoPlayInterval, isPaused, slides.length])
 
   const currentSlide = slides[currentIndex]
 
@@ -152,13 +152,13 @@ function InfiniteCarousel({ slides, autoPlayInterval = 2500 }: CarouselProps) {
   )
 }
 
-const nichos = [
+const niches = [
   {
     id: "barbearia",
     label: "Barbearias",
     icon: Scissors,
     headline: "Sua barbearia sempre lotada, sem o caos.",
-    desc: "Clientes agendam pelo celular, voce gerencia a equipe e acompanha tempo real. Sem papel, sem WhatsApp, sem confusao.",
+    desc: "Clientes agendam pelo celular, você gerencia a equipe e acompanha tempo real. Sem papel, sem WhatsApp, sem confusão.",
     features: [
       "Link exclusivo para seus clientes agendarem",
       "Controle de fila e tempo medio de atendimento",
@@ -215,9 +215,9 @@ const capabilities = [
 ]
 
 export function HeroSection() {
-  const [activeNicho, setActiveNicho] = useState(0)
-  const nicho = nichos[activeNicho]
-  const NichoIcon = nicho.icon
+  const [activeNiche, setActiveNiche] = useState(0)
+  const niche = niches[activeNiche]
+  const NicheIcon = niche.icon
 
   return (
     <section id="sobre" className="relative overflow-hidden bg-background" aria-label="Sobre o Calendro">
@@ -294,9 +294,9 @@ export function HeroSection() {
           >
             <div className="mx-auto flex items-center justify-center rounded-full border border-border bg-card p-1 w-fit">
               <button
-                onClick={() => setActiveNicho(0)}
+                onClick={() => setActiveNiche(0)}
                 className={`inline-flex items-center gap-2 rounded-full px-8 py-3 text-sm transition-all ${
-                  activeNicho === 0
+                  activeNiche === 0
                     ? "bg-foreground text-background"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
@@ -305,9 +305,9 @@ export function HeroSection() {
                 Barbearias
               </button>
               <button
-                onClick={() => setActiveNicho(1)}
+                onClick={() => setActiveNiche(1)}
                 className={`inline-flex items-center gap-2 rounded-full px-8 py-3 text-sm transition-all ${
-                  activeNicho === 1
+                  activeNiche === 1
                     ? "bg-foreground text-background"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
@@ -318,7 +318,7 @@ export function HeroSection() {
             </div>
 
             <motion.div
-              key={nicho.id}
+              key={niche.id}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35 }}
@@ -327,20 +327,20 @@ export function HeroSection() {
               <div className="lg:col-span-2">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="flex size-10 items-center justify-center rounded-lg bg-secondary">
-                    <NichoIcon className="size-5 text-foreground" />
+                    <NicheIcon className="size-5 text-foreground" />
                   </div>
                   <span className="text-xs font-medium uppercase tracking-[0.15em] text-muted-foreground">
-                    {nicho.label}
+                    {niche.label}
                   </span>
                 </div>
                 <h2 className="font-[family-name:var(--font-heading)] text-2xl font-bold leading-snug tracking-tight text-foreground lg:text-3xl">
-                  {nicho.headline}
+                  {niche.headline}
                 </h2>
                 <p className="mt-3 leading-relaxed text-muted-foreground text-pretty">
-                  {nicho.desc}
+                  {niche.desc}
                 </p>
                 <ul className="mt-6 flex flex-col gap-3">
-                  {nicho.features.map((feat, i) => (
+                  {niche.features.map((feat, i) => (
                     <motion.li
                       key={feat}
                       initial={{ opacity: 0, x: -12 }}
@@ -356,7 +356,7 @@ export function HeroSection() {
               </div>
 
               <div className="lg:col-span-3">
-                <InfiniteCarousel slides={nicho.slides} autoPlayInterval={4000} />
+                <InfiniteCarousel slides={niche.slides} autoPlayInterval={4000} />
               </div>
             </motion.div>
           </motion.div>
@@ -376,7 +376,7 @@ export function HeroSection() {
               Funcionalidades
             </p>
             <h2 className="font-[family-name:var(--font-heading)] text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-              Tudo que seu negocio precisa para crescer
+              Tudo que seu negócio precisa para crescer
             </h2>
           </motion.div>
 

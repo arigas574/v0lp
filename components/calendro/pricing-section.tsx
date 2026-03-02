@@ -15,7 +15,7 @@ const featureGroups: { group: string; features: PlanFeature[] }[] = [
   {
     group: "Agendamento",
     features: [
-      { name: "Agendamentos por mes", free: "30", pro: "Ilimitado", premium: "Ilimitado" },
+      { name: "Agendamentos por mês", free: "30", pro: "Ilimitado", premium: "Ilimitado" },
       { name: "Pagina de agendamento", free: true, pro: true, premium: true },
       { name: "Personalizacao com sua marca", free: false, pro: true, premium: true },
       { name: "Dominio personalizado", free: false, pro: false, premium: true },
@@ -26,7 +26,7 @@ const featureGroups: { group: string; features: PlanFeature[] }[] = [
     group: "Equipe",
     features: [
       { name: "Colaboradores", free: "1", pro: "5", premium: "Ilimitado" },
-      { name: "Gestao de escalas", free: false, pro: true, premium: true },
+      { name: "Gestão de escalas", free: false, pro: true, premium: true },
       { name: "Relatorio por profissional", free: false, pro: true, premium: true },
       { name: "Multi-filiais", free: false, pro: false, premium: true },
     ],
@@ -42,7 +42,7 @@ const featureGroups: { group: string; features: PlanFeature[] }[] = [
   {
     group: "Dados e Integracao",
     features: [
-      { name: "Dashboard analitico", free: "Basico", pro: "Completo", premium: "Avancado" },
+      { name: "Dashboard analítico", free: "Básico", pro: "Completo", premium: "Avançado" },
       { name: "Exportacao de dados", free: false, pro: true, premium: true },
       { name: "Google Calendar", free: false, pro: true, premium: true },
       { name: "API de integracao", free: false, pro: false, premium: true },
@@ -162,14 +162,14 @@ export function PricingSection() {
       name: "Free",
       price: "R$ 0",
       annualPrice: "R$ 0",
-      desc: "Para comecar a organizar seus agendamentos.",
+      desc: "Para começar a organizar seus agendamentos.",
     },
     {
       key: "pro",
       name: "Pro",
       price: "R$ 49,90",
       annualPrice: "R$ 39,90",
-      desc: "Para negocios que precisam de mais controle.",
+      desc: "Para negócios que precisam de mais controle.",
       popular: true,
     },
     {
@@ -214,7 +214,7 @@ export function PricingSection() {
               }`}
               role="switch"
               aria-checked={annual}
-              aria-label="Alternar cobranca anual"
+              aria-label="Alternar cobrança anual"
             >
               <span
                 className={`inline-block size-4 rounded-full transition-transform ${
